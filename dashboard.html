@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GitHub Issues Tracker</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- DaisyUI + Tailwind -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+
+<!-- NAVBAR -->
+<div class="navbar bg-white shadow px-6 flex justify-between">
+  <div class="flex">
+    <img src="./assets/github-logo.png" alt="" class="h-12 mt-3">
+    <h1 class="text-4xl font-bold mt-6 ml-3">GitHub Issues Tracker</h1>
+  </div>
+
+  <div class="flex gap-2">
+    <input id="searchInput" type="text" placeholder="Search issues" class="input input-bordered w-52"/>
+    <button onclick="searchIssues()" class="btn btn-primary">Search</button>
+  </div>
+</div>
+
+<div class="w-11/12 mx-auto mt-6">
+  <div class="max-w-7xl mx-auto p-6">
+
+    <!-- Filter Buttons -->
+    <div class="flex gap-3 mb-6">
+      <button id="allBtn" onclick="showAll()" class="btn btn-sm btn-active">All</button>
+      <button onclick="filterIssues('open')" class="btn btn-sm">Open</button>
+      <button onclick="filterIssues('closed')" class="btn btn-sm">Closed</button>
+    </div>
+
+    <!-- Summary -->
+    <div class="bg-gray-200 p-8 flex justify-between items-center">
+      <div class="flex space-x-5">
+        <img class="p-3" src="./assets/Aperture.png" alt="">
+        <div>
+          <h2 id="issueCount" class="font-bold text-3xl">50 Issues</h2>
+          <p class="text-xl">Track and manage your project issues</p>
+        </div>
+      </div>
+      <div class="flex space-x-8">
+        <div>
+          <h3 id="openCount" class="font-bold bg-green-500 rounded-full p-2">Open</h3>
+        </div>
+        <div>
+          <h3 id="closedCount" class="font-bold bg-purple-600 rounded-full p-2">Closed</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spinner -->
+    <div id="spinner" class="text-center hidden mt-5">
+      <span class="loading loading-spinner loading-lg"></span>
+    </div>
+
+    <!-- Issues Container -->
+    <div id="issuesContainer" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6"></div>
+
+  </div>
+</div>
+
+<!-- Issue Details Modal -->
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box">
+    <h2 id="modalTitle" class="font-bold text-lg">Fix broken image uploads</h2>
+    <p id="modalStatus" class="text-sm mt-1"></p>
+    <p id="modalAuthor" class="text-sm mt-1"></p>
+    <p id="modalDate" class="text-sm mt-1"></p>
+
+    <div class="flex gap-2 mt-3">
+      <span id="modalCategory" class="badge badge-error"></span>
+      <span id="modalPriority" class="badge badge-warning"></span>
+    </div>
+
+    <p id="modalDesc" class="mt-4 text-gray-600"></p>
+
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+<script src="./dashbord.js"></script>
+
+</body>
+</html>
