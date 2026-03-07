@@ -4,9 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+        *{
+            font-family: "Open Sans", sans-serif;
+        }
+    </style>
 </head>
-<body>
-    hi
-    
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+    <div class="bg-white w-[380px] p-8 rounded-xl shadow-lg">
+
+        
+        <div class="flex justify-center mb-4">
+            <div class="w-14 h-14 text-white flex items-center justify-center rounded-full text-2xl">
+                <img src="./assets/github-logo.png" alt="">
+            </div>
+        </div>
+
+        <h1 class="text-2xl font-bold text-center mb-1">
+            GitHub Issues Tracker
+        </h1>
+
+        <p class="text-center text-gray-500 mb-6 text-sm">
+            Sign in to manage your issues
+        </p>
+
+        
+        <form class="space-y-4">
+            <div>
+                <label class="text-sm font-medium">Username</label>
+                <input type="text" placeholder="Enter Username" class="input input-bordered w-full mt-1" />
+            </div>
+            <div>
+                <label class="text-sm font-medium">Password</label>
+                <input type="password" placeholder="Enter password" class="input input-bordered w-full mt-1" />
+            </div>
+            
+            <button class="btn btn-primary w-full mt-2">
+                Sign In
+            </button>
+        </form>
+
+        <div class="mt-6 bg-gray-100 p-3 text-center space-y-3 rounded text-sm text-gray-600">
+            <p class="font-semibold mb-1">Demo Credentials</p>
+            <p><span class="font">Username</span>: admin</p>
+            <p><span class="font-semibold">Password</span>: admin123</p>
+        </div>
+
+    </div>
+
 </body>
 </html>
